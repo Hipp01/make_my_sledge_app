@@ -1,26 +1,14 @@
-import { useState } from 'react';
 import SearchField from './SearchField';
 import SortField from './SortField';
 
-export default function SearchBar() {
-    const [sort, setSort] = useState('');
-    const [sortOrder, setSortOrder] = useState('asc');
-
-    const handleSortChange = (event) => {
-        setSort(event.target.value);
-    };
-
-    const toggleSortOrder = () => {
-        setSortOrder(prevOrder => (prevOrder === 'asc' ? 'desc' : 'asc'));
-    };
-
+export default function SearchBar({ query, setQuery, sort, setSort, sortOrder, toggleSortOrder }) {
     return (
         <div className="d-flex justify-content-center align-items-center m-3">
-            <SearchField />
+            <SearchField query={query} setQuery={setQuery} />
             <SortField 
                 sort={sort} 
                 sortOrder={sortOrder} 
-                handleSortChange={handleSortChange} 
+                handleSortChange={(e) => setSort(e.target.value)} 
                 toggleSortOrder={toggleSortOrder} 
             />
         </div>
