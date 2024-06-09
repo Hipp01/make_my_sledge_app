@@ -1,10 +1,12 @@
 import axios from 'axios';
 
+const url = 'http://192.168.1.181:5000';
+
 const fetchOneDog = (id) => {
-  return axios.get(`http://localhost:5000/dogs/${id}`)
+  return axios.get(`${url}/${id}`)
     .then(response => {
-      console.log('API Response:', response); // Ajouter un journal pour la réponse complète
-      return response.data; // Retourner uniquement les données
+      console.log('API Response:', response);
+      return response.data;
     })
     .catch(error => {
       console.error('Error fetching data:', error);
@@ -13,10 +15,10 @@ const fetchOneDog = (id) => {
 };
 
 const fetchAllDogs = () => {
-  return axios.get('http://localhost:5000/dogs')
+  return axios.get(`${url}/dogs`)
     .then(response => {
-      console.log('API Response:', response); // Ajouter un journal pour la réponse complète
-      return response.data; // Retourner uniquement les données
+      console.log('API Response:', response);
+      return response.data;
     })
     .catch(error => {
       console.error('Error fetching data:', error);
