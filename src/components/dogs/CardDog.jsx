@@ -26,10 +26,10 @@ export default function CardDog({ dog }) {
     const today = new Date().toISOString().slice(5, 10);
 
     return (
-        <div className="card" style={{ width: "18rem" }}>
+        <div className="card">
             {dog.photo ? (
                 <img
-                    className="card-img-top"
+                    className="card-img-top img-fluid"
                     src={`data:image/jpeg;base64,${hexToBase64(dog.photo)}`}
                     alt={`${dog.name}'s photo`}
                 />
@@ -53,6 +53,7 @@ export default function CardDog({ dog }) {
                         }
                         alt={dog.place.split(";").map( str => str.charAt(0).toUpperCase() + str.slice(1)).join(" & ")}
                         style={{ width: "260px" }}
+                        className="img-fluid"
                     />
 
                 </div>
