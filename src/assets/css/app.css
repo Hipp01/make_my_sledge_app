@@ -1,0 +1,22 @@
+.range-labels {
+    margin-top: -10px;
+}
+
+.range-labels span {
+    font-size: 0.8em;
+    width: 10%;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+}
+
+.range-labels span::before {
+    content: '';
+    height: 10px;
+    width: 1px;
+    background: #000;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}

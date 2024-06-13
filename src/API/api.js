@@ -3,7 +3,7 @@ import axios from 'axios';
 const url = 'http://192.168.1.181:5000';
 
 const fetchOneDog = (id) => {
-  return axios.get(`${url}/${id}`)
+  return axios.get(`${url}/dogs/${id}`)
     .then(response => {
       console.log('API Response:', response);
       return response.data;
