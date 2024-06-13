@@ -47,6 +47,7 @@ export default function AllDogs({ query, sort, sortOrder }) {
           ))}
         </div>
       )}
+      <a href="/" className="btn btn-primary">Back to home</a>
     </div>
   );
 }

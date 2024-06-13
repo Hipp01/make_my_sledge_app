@@ -7,6 +7,7 @@ import dogsled from "../../assets/dogsled.jpg";
 import male from "../../assets/male.png";
 import female from "../../assets/female.png";
 import PropTypes from 'prop-types';
+import { hexToBase64 } from "../../utils/utils";
 
 
 export default function CardDog({ dog }) {
@@ -38,7 +39,7 @@ export default function CardDog({ dog }) {
             )}
             <div className="card-body">
                 <h2 className="card-title text-center">{dog.name == "Aylo" ? "Aÿlo" : dog.name}</h2>
-                <div className="card-img-overlay" style={{ padding:"10px"}}>
+                <div className="card-img-overlay" style={{ padding:"10px", height:"50px" }}>
                     <img src={dog.sex == 0 ? female : male} style={{ width: "40px", float: "inline-end", backgroundColor:"white", padding:"5px", borderRadius: "5px"}}/>
                 </div>
                 <div className="card-img">
@@ -68,13 +69,6 @@ export default function CardDog({ dog }) {
         </div>
     );
 }
-
-const hexToBase64 = (hex) => {
-    const binaryString = hex.match(/\w{2}/g).map(char => {
-        return String.fromCharCode(parseInt(char, 16));
-    }).join('');
-    return btoa(binaryString);
-};
 
 function calculateAge(birthDate) {
     const today = new Date();
