@@ -26,7 +26,22 @@ const fetchAllDogs = () => {
     });
 }
 
-const fetchSled = () => {
-}
+const fetchSled = (numSleds, sledParams) => {
+  let queryString = `num_sleds=${numSleds}`;
+  for (let i = 1; i <= numSleds; i++) {
+    const { weight, comfort_level, speed_desire } = sledParams[i - 1];
+    queryString += `&weight${i}=${weight}&comfort_level${i}=${comfort_level}&speed_desire${i}=${speed_desire}`;
+  }
+
+  return axios.get(`${url}/sleds?${queryString}`)
+    .then(response => {
+      console.log('API Response:', response);
+      return response.data;
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+      throw error;
+    });
+};
 
 export { fetchOneDog, fetchAllDogs, fetchSled };

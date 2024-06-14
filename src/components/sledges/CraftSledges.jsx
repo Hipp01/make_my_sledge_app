@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import "../../assets/css/app.css"
+import { fetchSled } from '../../API/api'
+import "../../assets/css/app.css";
 
 export default function CraftSledges() {
     const [numberOfSledges, setNumberOfSledges] = useState(0);
     const [sledgeData, setSledgeData] = useState([]);
+    const [sledResponse, setSledResponse] = useState(null);
 
     const handleNumberOfSledgesChange = (e) => {
         const value = parseInt(e.target.value, 10);
@@ -23,6 +25,15 @@ export default function CraftSledges() {
         e.preventDefault();
         console.log('Number of Sledges:', numberOfSledges);
         console.log('Sledge Data:', sledgeData);
+
+        fetchSled(numberOfSledges, sledgeData)
+            .then(data => {
+                setSledResponse(data);
+                console.log('Sled data:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
     };
 
     return (
@@ -89,7 +100,6 @@ export default function CraftSledges() {
                                                     <span key={n}>{n + 1}</span>
                                                 ))}
                                             </div>
-                                            {/* <span>{sledgeData[i]?.comfort_level || ''}</span> */}
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor={`speedDesire${i}`}>Speed Desire</label>
@@ -107,7 +117,6 @@ export default function CraftSledges() {
                                                     <span key={n}>{n + 1}</span>
                                                 ))}
                                             </div>
-                                            {/* <span>{sledgeData[i]?.speed_desire || ''}</span> */}
                                         </div>
                                     </div>
                                 </div>
@@ -118,6 +127,12 @@ export default function CraftSledges() {
                 </form>
             </div>
             <a href="/" className="btn btn-primary">Back to home</a>
+            {sledResponse && (
+                <div className="mt-4">
+                    <h2 className="text-center">Sled Response</h2>
+                    <pre>{JSON.stringify(sledResponse, null, 2)}</pre>
+                </div>
+            )}
         </div>
     );
 }
