@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { fetchSled } from '../../API/api'
+import { fetchSled } from '../../API/api';
+import { useNavigate } from 'react-router-dom';
 import "../../assets/css/app.css";
 
 export default function CraftSledges() {
     const [numberOfSledges, setNumberOfSledges] = useState(0);
     const [sledgeData, setSledgeData] = useState([]);
-    const [sledResponse, setSledResponse] = useState(null);
+    const navigate = useNavigate();
 
     const handleNumberOfSledgesChange = (e) => {
         const value = parseInt(e.target.value, 10);
@@ -28,8 +29,8 @@ export default function CraftSledges() {
 
         fetchSled(numberOfSledges, sledgeData)
             .then(data => {
-                setSledResponse(data);
-                console.log('Sled data:', data);
+                // Naviguer vers la page Sledges avec les données reçues
+                navigate('/sledges', { state: { data } });
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -127,12 +128,6 @@ export default function CraftSledges() {
                 </form>
             </div>
             <a href="/" className="btn btn-primary">Back to home</a>
-            {sledResponse && (
-                <div className="mt-4">
-                    <h2 className="text-center">Sled Response</h2>
-                    <pre>{JSON.stringify(sledResponse, null, 2)}</pre>
-                </div>
-            )}
         </div>
     );
 }

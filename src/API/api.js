@@ -29,8 +29,8 @@ const fetchAllDogs = () => {
 const fetchSled = (numSleds, sledParams) => {
   let queryString = `num_sleds=${numSleds}`;
   for (let i = 1; i <= numSleds; i++) {
-    const { weight, comfort_level, speed_desire } = sledParams[i - 1];
-    queryString += `&weight${i}=${weight}&comfort_level${i}=${comfort_level}&speed_desire${i}=${speed_desire}`;
+    const { name, weight, comfort_level, speed_desire } = sledParams[i - 1];
+    queryString += `&name${i}=${name}&weight${i}=${weight}&comfort_level${i}=${comfort_level}&speed_desire${i}=${speed_desire}`;
   }
 
   return axios.get(`${url}/sleds?${queryString}`)
