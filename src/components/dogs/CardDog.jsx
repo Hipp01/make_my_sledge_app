@@ -1,11 +1,11 @@
-import front from "../../assets/front.png";
-import frontmiddle from "../../assets/front;middle.png";
-import middle from "../../assets/middle.png";
-import middleback from "../../assets/middle;back.png";
-import back from "../../assets/back.png";
-import dogsled from "../../assets/dogsled.jpg";
-import male from "../../assets/male.png";
-import female from "../../assets/female.png";
+import front from "../../assets/images/front.png";
+import frontmiddle from "../../assets/images/front;middle.png";
+import middle from "../../assets/images/middle.png";
+import middleback from "../../assets/images/middle;back.png";
+import back from "../../assets/images/back.png";
+import dogsled from "../../assets/images/dogsled.jpg";
+import male from "../../assets/images/male.png";
+import female from "../../assets/images/female.png";
 import PropTypes from 'prop-types';
 import { hexToBase64 } from "../../utils/utils";
 

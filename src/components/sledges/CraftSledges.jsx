@@ -29,7 +29,6 @@ export default function CraftSledges() {
 
         fetchSled(numberOfSledges, sledgeData)
             .then(data => {
-                // Naviguer vers la page Sledges avec les données reçues
                 navigate('/sledges', { state: { data } });
             })
             .catch(error => {
@@ -44,16 +43,17 @@ export default function CraftSledges() {
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label htmlFor="numberOfSledges">Number of Sledges</label>
-                        <input
-                            type="number"
-                            className="form-control w-25"
+                        <select
+                            className="form-select w-25"
                             id="numberOfSledges"
                             value={numberOfSledges}
                             onChange={handleNumberOfSledgesChange}
-                            placeholder="Enter the number of sledges"
-                            min="1"
-                            max="3"
-                        />
+                        >
+                            <option value="0">Select the number of sledges</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
                     </div>
                     <div className="row justify-content-center mt-3">
                         {Array.from({ length: numberOfSledges }, (_, i) => (
@@ -124,10 +124,10 @@ export default function CraftSledges() {
                             </div>
                         ))}
                     </div>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary" disabled={numberOfSledges === 0} >Submit</button>
                 </form>
             </div>
-            <a href="/" className="btn btn-primary">Back to home</a>
+            <a href="/" className="btn btn-primary mt-5">Back to home</a>
         </div>
     );
 }
