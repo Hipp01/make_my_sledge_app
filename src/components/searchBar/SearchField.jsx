@@ -1,3 +1,10 @@
+import PropTypes from "prop-types";
+
+SearchField.propTypes = {
+    query: PropTypes.string,
+    setQuery: PropTypes.func,
+};
+
 export default function SearchField({ query, setQuery }) {
     return (
         <input 

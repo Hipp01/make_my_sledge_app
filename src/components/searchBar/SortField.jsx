@@ -1,3 +1,12 @@
+import PropTypes from "prop-types";
+
+SortField.propTypes = {
+    sort: PropTypes.string,
+    sortOrder: PropTypes.string,
+    handleSortChange: PropTypes.func,
+    toggleSortOrder: PropTypes.func,
+};
+
 export default function SortField({ sort, sortOrder, handleSortChange, toggleSortOrder }) {
     return (
         <div className="d-flex align-items-center w-100">

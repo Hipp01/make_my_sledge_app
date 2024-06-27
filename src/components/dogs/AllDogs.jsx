@@ -1,6 +1,13 @@
 import { fetchAllDogs } from "../../API/api";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import CardDog from "./CardDog";
+
+AllDogs.propTypes = {
+    query: PropTypes.string,
+    sort: PropTypes.string,
+    sortOrder: PropTypes.string,
+};
 
 export default function AllDogs({ query, sort, sortOrder }) {
   const [dogs, setDogs] = useState([]);
