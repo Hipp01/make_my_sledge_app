@@ -5,7 +5,6 @@ const url = 'http://192.168.1.181:5000';
 const fetchOneDog = (id) => {
   return axios.get(`${url}/dogs/${id}`)
     .then(response => {
-      console.log('API Response:', response);
       return response.data;
     })
     .catch(error => {
@@ -17,11 +16,9 @@ const fetchOneDog = (id) => {
 const fetchAllDogs = () => {
   return axios.get(`${url}/dogs`)
     .then(response => {
-      console.log('API Response:', response);
       return response.data;
     })
     .catch(error => {
-      console.error('Error fetching data:', error);
       throw error;
     });
 }
@@ -35,7 +32,6 @@ const fetchSled = (numSleds, sledParams) => {
 
   return axios.get(`${url}/sleds?${queryString}`)
     .then(response => {
-      console.log('API Response:', response);
       return response.data;
     })
     .catch(error => {

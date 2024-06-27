@@ -24,8 +24,6 @@ export default function CraftSledges() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Number of Sledges:', numberOfSledges);
-        console.log('Sledge Data:', sledgeData);
 
         fetchSled(numberOfSledges, sledgeData)
             .then(data => {
@@ -42,7 +40,6 @@ export default function CraftSledges() {
             <div>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="numberOfSledges">Number of Sledges</label>
                         <select
                             className="form-select w-25"
                             id="numberOfSledges"

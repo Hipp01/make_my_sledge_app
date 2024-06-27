@@ -14,7 +14,6 @@ export default function DogDetails() {
         setIsLoading(false);
         });
     }, [id]);
-    console.log(dog);
     
     return (
         <div className="container">
