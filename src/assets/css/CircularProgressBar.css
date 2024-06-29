@@ -1,0 +1,45 @@
+.progress-circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring__circle {
+    transition: stroke-dashoffset 1s;
+    transform: rotate(180deg);
+    transform-origin: 50% 50%;
+}
+
+.progress-circle__label {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+.progress-circle__percentage {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.progress-bars {
+    display: flex;
+    justify-content: center; 
+    gap: 20px; 
+}
+
+.progress-bar-item {
+    text-align: center;
+}
