@@ -124,7 +124,6 @@ export default function CraftSledges() {
                     <button type="submit" className="btn btn-primary" disabled={numberOfSledges === 0} >Submit</button>
                 </form>
             </div>
-            <a href="/" className="btn btn-primary mt-5">Back to home</a>
         </div>
     );
 }

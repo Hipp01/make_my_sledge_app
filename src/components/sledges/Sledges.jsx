@@ -128,7 +128,6 @@ export default function Sledges() {
                     </div>
                 </div>
             ))}
-            <button onClick={() => window.history.back()} className='btn btn-primary mx-2'>Go back</button>
         </div>
     );
 }

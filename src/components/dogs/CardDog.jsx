@@ -7,7 +7,7 @@ import dogsled from "../../assets/images/dogsled.jpg";
 import male from "../../assets/images/male.png";
 import female from "../../assets/images/female.png";
 import PropTypes from 'prop-types';
-import { hexToBase64 } from "../../utils/utils";
+import { hexToBase64, calculateAge } from "../../utils/utils";
 
 
 export default function CardDog({ dog }) {
@@ -68,17 +68,4 @@ export default function CardDog({ dog }) {
             </div>
         </div>
     );
-}
-
-function calculateAge(birthDate) {
-    const today = new Date();
-    const birth = new Date(birthDate);
-    let age = today.getFullYear() - birth.getFullYear();
-    const monthDifference = today.getMonth() - birth.getMonth();
-    const dayDifference = today.getDate() - birth.getDate();
-    if (monthDifference < 0 || (monthDifference === 0 && dayDifference < 0)) {
-        age--;
-    }
-
-    return age;
 }

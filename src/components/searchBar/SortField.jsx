@@ -15,7 +15,7 @@ export default function SortField({ sort, sortOrder, handleSortChange, toggleSor
                 <option value="">---</option>
                 <option value="name">Name</option>
                 <option value="endurance">Endurance</option>
-                <option value="strenght">Strength</option>
+                <option value="strength">Strength</option>
                 <option value="stress_level">Stress level</option>
                 <option value="ability_to_stay_in_place">Ability to stay</option>
             </select>
