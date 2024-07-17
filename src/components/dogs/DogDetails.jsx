@@ -5,11 +5,13 @@ import { hexToBase64, calculateAge } from "../../utils/utils";
 import CircularProgressBar from './CircularProgressBar';
 import male from "../../assets/images/male.png";
 import female from "../../assets/images/female.png";
+import { useAuth } from "../../context/AuthContext";
 
 export default function DogDetails() {
     const { id } = useParams();
     const [dog, setDog] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const { isAuthenticated } = useAuth();
 
     useEffect(() => {
         fetchOneDog(id).then((data) => {

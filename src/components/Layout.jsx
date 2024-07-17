@@ -4,6 +4,7 @@ import CraftSledges from './sledges/CraftSledges';
 import Sledges from './sledges/Sledges';
 import DogsPage from './dogs/DogsPage';
 import DogDetails from './dogs/DogDetails';
+import Login from './login/Login';
 import ArrowUp from './ArrowUp';
 import { FaHome, FaRegArrowAltCircleLeft  } from "react-icons/fa";
 
@@ -20,6 +21,7 @@ const Layout = () => {
           <Route path="/sledges" element={<Sledges />} />
           <Route path="/dogs" element={<DogsPage />} />
           <Route path="/dogs/:id" element={<DogDetails />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<h1>Page not found</h1>} />
         </Routes>
       </main>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://192.168.1.181:5000';
+const url = 'http://127.0.0.1:5000';
 
 const fetchOneDog = (id) => {
   return axios.get(`${url}/dogs/${id}`)
@@ -40,4 +40,13 @@ const fetchSled = (numSleds, sledParams) => {
     });
 };
 
-export { fetchOneDog, fetchAllDogs, fetchSled };
+const loginRequest = async (username, password) => {
+  try {
+    const response = await axios.post(`${url}/login`, { username, password });
+    return response.data;
+  } catch (error) {
+    throw new Error('Nom d\'utilisateur ou mot de passe incorrect');
+  }
+};
+
+export { fetchOneDog, fetchAllDogs, fetchSled, loginRequest };
