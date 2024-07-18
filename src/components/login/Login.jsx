@@ -12,14 +12,15 @@ const Login = () => {
     try {
       await login(username, password);
     } catch (err) {
-      setError('Nom d\'utilisateur ou mot de passe incorrect');
+      setError('username or password incorrect');
     }
   };
 
   return (
     isAuthenticated ? (
       <div>
-        <p>Vous êtes connecté!</p>
+        <p>You are connected</p>
+        <a className="btn btn-primary" href="/logout">Logout</a>
       </div>
     ) : (
       <div className="login-container">
@@ -27,7 +28,7 @@ const Login = () => {
           <h2>Connexion</h2>
           {error && <p>{error}</p>}
           <div>
-            <label>Nom d&apos;utilisateur:</label>
+            <label>Username :</label>
             <input 
               type="text" 
               value={username} 
@@ -36,7 +37,7 @@ const Login = () => {
             />
           </div>
           <div>
-            <label>Mot de passe:</label>
+            <label>Password :</label>
             <input 
               type="password" 
               value={password} 
@@ -44,7 +45,7 @@ const Login = () => {
               required 
             />
           </div>
-          <button type="submit">Connexion</button>
+          <button className='btn btn-primary' type="submit">Connexion</button>
         </form>
       </div>
     )
