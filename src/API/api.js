@@ -23,6 +23,26 @@ const fetchAllDogs = () => {
     });
 }
 
+export const updateDog = async (id, dogData) => {
+  try {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      console.error('No token found');
+      alert('You need to log in first');
+      return;
+    }
+    await axios.put(`${url}/dogs/${id}`, dogData, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+  } catch (error) {
+    console.error('Error updating dog data', error);
+    throw error;
+  }
+};
+
 const fetchSled = (numSleds, sledParams) => {
   let queryString = `num_sleds=${numSleds}`;
   for (let i = 1; i <= numSleds; i++) {
