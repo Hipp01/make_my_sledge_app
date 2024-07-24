@@ -19,6 +19,7 @@ const Layout = () => {
   return (
     <div>
       <header>
+        <h1 className="text-center my-3">Make My Sledge</h1>
       </header>
       <main>
         <Routes>

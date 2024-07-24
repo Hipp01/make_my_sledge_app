@@ -13,7 +13,7 @@ export default function DogsPage() {
 
     return (
     <div className="App container">
-      <h1 className="text-center my-3">Make My Sledge</h1>
+      <h1 className="text-center">All Dogs</h1>
       <div className="d-flex justify-content-center align-items-center w-100">
         <SearchBar 
           query={query} 

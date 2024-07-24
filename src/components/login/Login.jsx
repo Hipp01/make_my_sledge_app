@@ -18,9 +18,9 @@ const Login = () => {
 
   return (
     isAuthenticated ? (
-      <div>
-        <p>You are connected</p>
-        <a className="btn btn-primary" href="/logout">Logout</a>
+      <div className="login-container d-flex flex-column align-items-center">
+        <p className='text-success mb-3'>You are connected</p>
+          <a className="btn btn-primary" href="/logout">Logout</a>
       </div>
     ) : (
       <div className="login-container">

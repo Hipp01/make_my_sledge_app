@@ -122,7 +122,7 @@ export default function DogDetails() {
                   <div className="col-md-6 col-sm-12 mb-3">
                     <div className="card p-3 shadow-sm">
                       <p>
-                        <strong>Name :</strong>
+                        <strong>Name : </strong>
                         <input 
                           type="text" 
                           name="name" 
@@ -137,7 +137,7 @@ export default function DogDetails() {
                         {calculateAge(dogData.date_of_birth)} years ({dog.date_of_birth})
                       </p>
                       <p>
-                        <strong>Place :</strong>
+                        <strong>Place : </strong>
                         <select 
                           name="place" 
                           value={dogData.place} 
@@ -153,7 +153,7 @@ export default function DogDetails() {
                       </p>
                       {dog.enemies && (
                         <p>
-                          <strong>Enemies :</strong>
+                          <strong>Enemies : </strong>
                           <textarea 
                             name="enemies" 
                             value={dogData.enemies} 
@@ -168,7 +168,7 @@ export default function DogDetails() {
                   <div className="col-md-6 col-sm-12 mb-3">
                     <div className="card p-3 shadow-sm">
                       <p>
-                        <strong>Temperament :</strong>
+                        <strong>Temperament : </strong>
                         <input
                           type="text"
                           name="temperament"
@@ -180,7 +180,7 @@ export default function DogDetails() {
                       </p>
                       {dog.sex === 0 && (
                         <p>
-                          <strong>Heat periods :</strong>
+                          <strong>Heat periods : </strong>
                           <input
                             type="text"
                             name="heat_periods"
@@ -192,7 +192,7 @@ export default function DogDetails() {
                         </p>
                       )}
                       <p>
-                        <strong>Human contact :</strong>
+                        <strong>Human contact : </strong>
                         <input
                           type="text"
                           name="human_contact"
@@ -203,7 +203,7 @@ export default function DogDetails() {
                         />
                       </p>
                       <p>
-                        <strong>Experienced :</strong>
+                        <strong>Experienced : </strong>
                         <select
                           name="experience"
                           value={dogData.experience}
@@ -215,7 +215,7 @@ export default function DogDetails() {
                         </select>
                       </p>
                       <p>
-                        <strong>Is running :</strong>
+                        <strong>Is running : </strong>
                         <select
                           name="is_running"
                           value={dogData.is_running}
@@ -238,13 +238,13 @@ export default function DogDetails() {
                     <div className="card p-3 shadow-sm">
                       <p><strong>Name : </strong>{dog.name}</p>
                       <p><strong>Age : </strong>{dogData.age} years ({dog.date_of_birth})</p>
-                      <p><strong>Place :</strong>{dog.place.split(";").map(str => str.charAt(0).toUpperCase() + str.slice(1)).join(" & ")}</p>
-                      {dog.enemies && <p><strong>Enemies :</strong>{dog.enemies}</p>}
+                      <p><strong>Place : </strong>{dog.place.split(";").map(str => str.charAt(0).toUpperCase() + str.slice(1)).join(" & ")}</p>
+                      {dog.enemies && <p><strong>Enemies : </strong>{dog.enemies}</p>}
                     </div>
                   </div>
                   <div className="col-md-6 col-sm-12 mb-3">
                     <div className="card p-3 shadow-sm">
-                      <p><strong>Temperament :</strong> {dog.temperament[0].toUpperCase() + dog.temperament.slice(1)}</p>
+                      <p><strong>Temperament : </strong> {dog.temperament[0].toUpperCase() + dog.temperament.slice(1)}</p>
                       {dog.sex === 0 && <p><strong>Heat periods :</strong> {dog.heat_periods}</p>}
                       <p><strong>Human contact :</strong> {dog.human_contact[0].toUpperCase() + dog.human_contact.slice(1)}</p>
                       <p><strong>Experienced :</strong> {dog.experience ? "Yes" : "No"}</p>
