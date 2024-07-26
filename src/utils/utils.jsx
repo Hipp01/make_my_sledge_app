@@ -5,6 +5,15 @@ export function hexToBase64 (hex) {
     return btoa(binaryString);
 }
 
+export function base64ToHex(base64) {
+    const binaryString = atob(base64);
+    const hex = Array.from(binaryString).map(char => {
+        return char.charCodeAt(0).toString(16).padStart(2, '0');
+    }).join('');
+    return hex;
+}
+
+
 export function calculateAge(birthDate) {
     const today = new Date();
     const birth = new Date(birthDate);

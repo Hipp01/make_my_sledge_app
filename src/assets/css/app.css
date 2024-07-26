@@ -1,4 +1,4 @@
-#root {
+main {
     background-color: #f0f8ff;
     color: #333;
     font-family: 'Arial', sans-serif;
@@ -14,11 +14,10 @@
 }
 
 header, footer {
-    background-color: #5da3db; /* SteelBlue, un ton froid */
+    background-color: #5da3db;
     color: #fff;
     padding: 10px 0;
-    /* text-align: center; */
-    position: sticky;
+    position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {

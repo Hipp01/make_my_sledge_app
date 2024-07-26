@@ -20,7 +20,10 @@ const Login = () => {
     isAuthenticated ? (
       <div className="login-container d-flex flex-column align-items-center">
         <p className='text-success mb-3'>You are connected</p>
-          <a className="btn btn-primary" href="/logout">Logout</a>
+            <div className='mb-3'>
+                <a className="btn btn-primary" href="/logout">Logout</a>
+                <a className="btn btn-primary ms-3" href="/">Home</a>
+            </div>
       </div>
     ) : (
       <div className="login-container">
