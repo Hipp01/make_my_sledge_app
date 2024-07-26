@@ -1,11 +1,13 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { fetchOneDog, updateDog } from '../../API/api';
+import { fetchOneDog, updateDog, deleteDog } from '../../API/api';
 import { hexToBase64, base64ToHex, calculateAge } from '../../utils/utils';
 import CircularProgressBar from './CircularProgressBar';
 import male from '../../assets/images/male.png';
 import female from '../../assets/images/female.png';
 import { useAuth } from '../../context/AuthContext';
+import { FaTrashCan } from "react-icons/fa6";
+
 
 export default function DogDetails() {
   const { id } = useParams();
@@ -99,6 +101,19 @@ export default function DogDetails() {
       alert('Failed to update data');
     }
   };
+  
+  const handleDelete = async () => {
+    if (window.confirm('Are you sure you want to delete this dog?')) {
+      try {
+        await deleteDog(dog.id);
+        alert('Dog deleted successfully');
+        window.location.href = '/dogs';
+      } catch (error) {
+        console.error('Error deleting dog', error);
+        alert('Failed to delete dog');
+      }
+    }
+  };
 
   return (
     <div className="container">
@@ -180,6 +195,7 @@ export default function DogDetails() {
           <div className="container mt-4">
             <h2>Details</h2>
             {isAuthenticated ? (
+            <div>
               <form className="row" onSubmit={handleSubmit}>
                 <div className="col-md-6 col-sm-12 mb-3">
                   <div className="card p-3 shadow-sm">
@@ -346,6 +362,15 @@ export default function DogDetails() {
                   <button type="submit" className="btn btn-primary">Save</button>
                 </div>
               </form>
+              <div className="container mt-4 row justify-content-center p-3">
+                <div className="row bg-danger text-white p-2 rounded w-50 text-center">
+                  <h2>Danger zone</h2>
+                  <button className="btn btn-danger" onClick={handleDelete}>
+                    <FaTrashCan size="1.2em" /> Delete Dog <FaTrashCan size="1.2em" />
+                  </button>
+                </div>
+              </div>
+            </div>
             ) : (
             <div>
               <div className="row">

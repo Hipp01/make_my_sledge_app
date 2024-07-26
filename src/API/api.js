@@ -43,6 +43,26 @@ export const updateDog = async (id, dogData) => {
   }
 };
 
+export const deleteDog = async (id) => {
+  try {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      console.error('No token found');
+      alert('You need to log in first');
+      return;
+    }
+    await axios.delete(`${url}/dogs/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+  } catch (error) {
+    console.error('Error deleting dog data', error);
+    throw error;
+  }
+}
+
 const fetchSled = (numSleds, sledParams) => {
   let queryString = `num_sleds=${numSleds}`;
   for (let i = 1; i <= numSleds; i++) {
