@@ -145,7 +145,7 @@ export default function DogDetails() {
               />
             </div>
             {isAuthenticated ? (
-              <div className="w-25 mx-auto mt-3 bg-secondary text-white p-2 rounded">
+              <div className="col-lg-3 mx-auto mt-3 bg-secondary text-white p-2 rounded">
                 <form onSubmit={handleSubmit}>
                   <input
                     type="file"

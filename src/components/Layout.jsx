@@ -34,8 +34,6 @@ const Layout = () => {
         </Routes>
       </main>
       <footer>
-          { window.location.pathname === "/" ? 
-              null :
               <div className='d-flex bd-highlight'>
                   <div className=''>
                       <div className='mx-5 p-2 bd-highlight'>
@@ -53,7 +51,6 @@ const Layout = () => {
                   )}
                   </div>
               </div>
-          }
       </footer>
       <ArrowUp />
     </div>

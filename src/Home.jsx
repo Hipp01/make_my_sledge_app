@@ -5,7 +5,6 @@ export default function Home() {
             <div className="text-center my-5">            
                 <a href={`make_sledge`} className="btn btn-primary mx-3">Make my sledge</a>
                 <a href={`dogs`} className="btn btn-primary mx-3">See the dogs</a>
-                
             </div>
         </div>
             
