@@ -2,6 +2,7 @@ import { fetchAllDogs } from "../../API/api";
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import CardDog from "./CardDog";
+import { useAuth } from '../../context/AuthContext';
 
 AllDogs.propTypes = {
     query: PropTypes.string,
@@ -12,6 +13,8 @@ AllDogs.propTypes = {
 export default function AllDogs({ query, sort, sortOrder }) {
   const [dogs, setDogs] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { isAuthenticated } = useAuth();
+
 
   useEffect(() => {
     fetchAllDogs().then((data) => {
@@ -33,16 +36,22 @@ export default function AllDogs({ query, sort, sortOrder }) {
 
   return (
     <div className="container">
-      <button className="btn btn-primary my-2" 
-        onClick={() => {
-          setIsLoading(true);
-          fetchAllDogs().then((data) => {
-            setDogs(data);
-            setIsLoading(false);
-          });
-        }}>
-        Refresh
-      </button>
+      <div className="d-flex justify-content-between">
+        <button className="btn btn-primary my-2" 
+          onClick={() => {
+            setIsLoading(true);
+            fetchAllDogs().then((data) => {
+              setDogs(data);
+              setIsLoading(false);
+            });
+          }}>
+          Refresh
+        </button>
+        { isAuthenticated ? (
+            <a href="/dogs/new" className="btn btn-primary my-2 ml-2">Add new dog</a>
+        ) : null }
+      </div>
+
       {isLoading ? (
         <p>Loading...</p>
       ) : (

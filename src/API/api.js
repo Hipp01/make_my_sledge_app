@@ -43,6 +43,26 @@ export const updateDog = async (id, dogData) => {
   }
 };
 
+export const createDog = async (dogData) => {
+  try {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+      console.error('No token found');
+      alert('You need to log in first');
+      return;
+    }
+    await axios.post(`${url}/dogs`, dogData, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+  } catch (error) {
+    console.error('Error creating dog data', error);
+    throw error;
+  }
+}
+
 export const deleteDog = async (id) => {
   try {
     const token = localStorage.getItem('token');

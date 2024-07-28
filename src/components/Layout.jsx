@@ -4,6 +4,7 @@ import CraftSledges from './sledges/CraftSledges';
 import Sledges from './sledges/Sledges';
 import DogsPage from './dogs/DogsPage';
 import DogDetails from './dogs/DogDetails';
+import NewDog from './dogs/NewDog';
 import Login from './login/Login';
 import Logout from './login/Logout';
 import ArrowUp from './ArrowUp';
@@ -28,9 +29,15 @@ const Layout = () => {
           <Route path="/sledges" element={<Sledges />} />
           <Route path="/dogs" element={<DogsPage />} />
           <Route path="/dogs/:id" element={<DogDetails />} />
+          <Route path="/dogs/new" element={<NewDog />} />
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
-          <Route path="*" element={<h1>Page not found</h1>} />
+          <Route path="*" element={
+            <div className='text-center py-5'>
+              <h1>Page not found</h1>
+              <a href="/" className="btn btn-primary mt-5">Home</a>
+            </div>
+            } />
         </Routes>
       </main>
       <footer>
