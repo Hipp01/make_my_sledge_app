@@ -43,7 +43,7 @@ const Layout = () => {
       <footer>
               <div className='d-flex bd-highlight'>
                   <div className=''>
-                      <div className='mx-5 p-2 bd-highlight'>
+                      <div className='ms-3 mx-lg-5 p-2 bd-highlight'>
                           <a href="/" className="btn btn-primary me-2"><FaHome size="1.5em"/></a>
                           <button className="btn btn-primary" onClick={() => window.history.back()}><FaRegArrowAltCircleLeft size="1.5em" /></button>
                       </div>

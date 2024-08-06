@@ -41,6 +41,9 @@ export default function CardDog({ dog }) {
                 <h2 className="card-title text-center">{dog.name == "Aylo" ? "Aÿlo" : dog.name}</h2>
                 <div className="card-img-overlay" style={{ padding:"10px", height:"50px" }}>
                     <img src={dog.sex == 0 ? female : male} style={{ width: "40px", float: "inline-end", backgroundColor:"white", padding:"5px", borderRadius: "5px"}}/>
+                    {birthDay === today ? (
+                        <h5 className="badge bg-info ms-2">Birthday 🎉🎉</h5>
+                    ) : null}
                 </div>
                 <div className="card-img">
                     <img
@@ -53,16 +56,12 @@ export default function CardDog({ dog }) {
                             dogsled 
                         }
                         alt={dog.place.split(";").map( str => str.charAt(0).toUpperCase() + str.slice(1)).join(" & ")}
-                        style={{ width: "260px" }}
                         className="img-fluid"
                     />
 
                 </div>
-                <div className="d-flex justify-content-between align-items-center mt-2">
+                <div className="d-flex flex-column flex-lg-row justify-content-between align-items-center mt-2">
                     <h5 className="mt-1 ms-lg-3">{calculateAge(dog.date_of_birth)} years</h5>
-                    {birthDay === today ? (
-                        <h5 className="badge bg-info mt-2">Birthday 🎉🎉</h5>
-                    ) : null}
                     <a href={`/dogs/${dog.id}`} className="btn btn-primary px-3">See</a>
                 </div>
             </div>

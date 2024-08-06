@@ -57,7 +57,7 @@ export default function AllDogs({ query, sort, sortOrder }) {
       ) : (
         <div className="row">
           {filteredDogs.map(dog => (
-            <div key={dog.id} className="col-12 col-md-6 col-lg-3 my-2 px-2">
+            <div key={dog.id} className="col-6 col-md-6 col-lg-3 px-2">
               <CardDog dog={dog} />
             </div>
           ))}

@@ -210,9 +210,16 @@ export default function DogDetails() {
                         maxLength={80}
                       />
                     </p>
-                    <p>
+                    <p className="">
                       <strong>Age : </strong>
-                      {calculateAge(dogData.date_of_birth)} years ({dog.date_of_birth})
+                      {calculateAge(dogData.date_of_birth)} years
+                      <input 
+                        type="date" 
+                        name="date_of_birth" 
+                        value={dogData.date_of_birth} 
+                        onChange={handleChange} 
+                        className="form-control mt-2" 
+                      />
                     </p>
                     <p>
                       <strong>Place : </strong>
