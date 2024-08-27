@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://192.168.1.98:5000';
+const url = 'https://zippo1001.pythonanywhere.com';
 
 const fetchOneDog = (id) => {
   return axios.get(`${url}/dogs/${id}`)
