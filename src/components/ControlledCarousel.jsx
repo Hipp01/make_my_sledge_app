@@ -15,36 +15,39 @@ function ControlledCarousel() {
     <Carousel activeIndex={index} onSelect={handleSelect}>
       <Carousel.Item>
         <img
-          className="d-block w-100 carousel-image"
+          className="d-block w-100 carousel-image rounded"
           src={image1}
           alt="First slide"
         />
-        <Carousel.Caption>
-          <h3 className='text-black bg-white p-2 rounded
-          '>Winter Adventure</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <Carousel.Caption className='py-0 rounded' style={{ backgroundColor: 'rgba(255, 255, 255, 0.8)'}}>
+        <h3 className='text-black p-1 rounded'>
+          Winter Adventure
+        </h3>
+        <p className='text-black px-2'>
+        Embracing the winter magic of the North.
+          </p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100 carousel-image"
+          className="d-block w-100 carousel-image rounded"
           src={image2}
           alt="Second slide"
         />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <Carousel.Caption className='py-0 rounded' style={{ backgroundColor: 'rgba(255, 255, 255, 0.6)'}}>
+        <h3 className='text-black p-1 rounded'>Northern Serenity</h3>
+          <p className='text-black px-2'>The wild nature of northern Sweden, where every moment breathes tranquility.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
         <img
-          className="d-block w-100 carousel-image"
+          className="d-block w-100 carousel-image rounded"
           src={image3}
           alt="Third slide"
         />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        <Carousel.Caption className='py-0 rounded' style={{ backgroundColor: 'rgba(255, 255, 255, 0.6)'}}>
+        <h3 className='text-black p-1 rounded'>Sled Dogs in Action</h3>
+          <p className='text-black px-2'>Power and endurance meet the Arctic wilderness in perfect harmony.</p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

@@ -2,3 +2,24 @@
     max-height: 600px; 
     object-fit: cover; 
   }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container-full-height {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+@media (min-width: 992px) {
+    #Home {
+        overflow: hidden;
+    }
+}
